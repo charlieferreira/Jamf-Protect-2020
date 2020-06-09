@@ -1,0 +1,29 @@
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.e-price-loading {
+  animation: pulse 1s ease-in-out;
+  animation-iteration-count: infinite;
+  position: relative;
+
+  &:after {
+    content: '';
+    background-color: $color-border;
+    height: calc(100% + 4px);
+    width: calc(100% + 6px);
+    border-radius: 4px;
+    position: absolute;
+    z-index: 1;
+    top: -2px;
+    left: 0;
+  }
+}

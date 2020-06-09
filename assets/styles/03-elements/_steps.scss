@@ -1,0 +1,146 @@
+.e-steps {
+    font-size: 0;
+
+    &__number {
+        @include transition(all, 0.2s);
+        background-color: $color-border;
+        color: $color-placeholder;
+        font-family: $font-alt;
+        vertical-align: middle;
+        display: inline-block;
+        border-radius: 999px;
+        margin-bottom: 20px;
+        margin-right: 20px;
+        position: relative;
+        text-align: center;
+        font-weight: bold;
+        line-height: 30px;
+        user-select: none;
+        font-size: 12px;
+        height: 30px;
+        width: 30px;
+
+        @media #{$md} {
+            margin-right: 40px;
+        }
+
+        &:before, &:after {
+            content: '';
+            background-color: $color-border;
+            transform: translateY(-50%);
+            position: absolute;
+            height: 2px;
+            width: 20px;
+            top: 50%;
+
+            @media #{$md} {
+                width: 40px;
+            }
+        }
+
+        &:before {
+            left: calc(-100% + 10px);
+
+            @media #{$md} {
+                left: calc(-100% - 10px);
+            }
+        }
+
+        &:after {
+            @include transition(all, 0.12s);
+            background-color: $color-primary !important;
+            // transition-delay: 0.1s;
+            left: 100%;
+            z-index: 1;
+            width: 0;
+        }
+
+        &:first-of-type {
+
+            &:before {
+                display: none;
+            }
+        }
+
+        &:last-of-type {
+            margin-right: 0;
+
+            &:after {
+                display: none;
+            }
+        }
+
+        &--active {
+
+            &:after {
+                width: 0 !important;
+            }
+        }
+
+        &--active, &--completed {
+            background-color: $color-primary;
+            color: $color-txt;
+
+            &:after {
+                width: 20px;
+
+                @media #{$md} {
+                    width: 40px;
+                }
+            }
+        }
+
+        &--completed {
+            background-color: $color-primary !important;
+            color: $color-txt !important;
+            transition: none !important;
+            font-size: 0;
+
+            &:after {
+                transition: none !important;
+                width: 20px;
+                
+                @media #{$md} {
+                    width: 40px;
+                }
+            }
+
+            .e-steps__label {
+                transition: none !important;
+                background: url('./assets/images/check.svg') no-repeat center;
+                transform: translate(-50%, -50%);
+                background-size: contain;
+                opacity: 1 !important;
+                position: absolute;
+                width: 12px;
+                height: 8px;
+                left: 50%;
+                top: 50%;
+            }
+        }
+
+        &--last {
+
+            &:after {
+                transition: all 0.2s ease-in-out !important;
+            }
+
+            .e-steps__label {
+                transition: all 0.2s ease-in-out !important;
+            }
+        }
+
+        &--initial {
+            background-color: $color-border;
+            font-size: 0;
+
+            &:after {
+                width: 0;
+            }
+
+            .e-steps__label {
+                opacity: 0;
+            }
+        }
+    }
+}

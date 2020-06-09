@@ -1,0 +1,56 @@
+.m-step {
+    position: relative;
+
+    &__container {
+        min-height: calc(100vh - 243px);
+        padding-bottom: 90px;
+        position: relative;
+        padding-top: 30px;
+        width: 100%;
+
+        @media #{$xs} {
+            min-height: none !important;
+            height: auto !important;
+        }
+
+        .row + .e-cta {
+            text-align: center;
+            position: absolute;
+            bottom: 30px;
+            width: 100%;
+
+            @media #{$xs} {
+                width: 100%;
+            }
+
+            @media #{$xl} {
+                width: 58.333333%;
+            }
+        }
+    }
+
+    &__header {
+        @extend %heading-1;
+        margin-bottom: 25px;
+
+        @media #{$xs} {
+            line-height: 1.7;
+        }
+    }
+
+    &__subheader {
+        @extend %heading-3;
+        margin-bottom: 20px;
+
+        @media #{$xs} {
+            line-height: 1.6;
+        }
+    }
+
+    .e-steps {
+
+        @media #{$sm} {
+            margin-bottom: 25px;
+        }
+    }
+}

@@ -1,0 +1,53 @@
+.e-cta {
+
+    &__text {
+        @extend %global-desc;
+    }
+
+    &__link {
+        @extend %global-link;
+    }
+
+    &--box {
+        background: $color-bg;
+        border-radius: 8px;
+        padding: 20px;
+
+        .e-cta__text {
+            @extend %heading-3;
+            color: $color-txt-dark;
+            margin-bottom: 10px;
+            line-height: 1.25;
+        }
+
+        .e-cta__link {
+            background-color: transparent;
+            border: 2px solid $color-txt;
+            font-family: $font-alt;
+            border-radius: 999px;
+            text-align: center;
+            user-select: none;
+            color: $color-txt;
+            line-height: 36px;
+            font-weight: 700;
+            font-size: 11px;
+            display: block;
+            width: 100%;
+
+            @media #{$sm} {
+                line-height: 50px;
+                font-size: 13px;
+            }
+
+            @media #{$lg} {
+                font-size: 14px;
+            }
+
+            &:hover {
+                background-color: $color-txt;
+                color: $color-bg-modal;
+            }
+        }
+    }
+
+}

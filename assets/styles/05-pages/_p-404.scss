@@ -1,0 +1,28 @@
+.p-not-found {
+
+  .m-page__header, .m-page__subheader {
+    text-align: center;
+  }
+
+  .m-page__subheader {
+
+    @media #{$xs} {
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+  }
+
+  .m-page__container {
+    min-height: 0;
+
+    @media #{$sm} {
+      padding-bottom: 140px;
+      padding-top: 90px;
+    }
+    
+    @media #{$md} {
+      padding-bottom: 230px;
+      padding-top: 160px;
+    }
+  }
+}

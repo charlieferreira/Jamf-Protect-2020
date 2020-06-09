@@ -1,0 +1,81 @@
+.e-counter {
+    @include flex(space-between, center, nowrap);
+    display: inline-flex;
+
+    &__remove, &__add {
+        @include transition(all, 0.2s);
+        box-shadow: 0 5px 10px 0 rgba(91, 105, 130, 0.15);
+        background-color: $color-bg-modal;
+        vertical-align: middle;
+        display: inline-block;
+        border-radius: 999px;
+        position: relative;
+        height: 24px;
+        width: 24px;
+
+        @media #{$md} {
+            height: 30px;
+            width: 30px;
+        }
+
+        @media #{$lg} {
+            cursor: pointer;
+        }
+
+        &:hover {
+            box-shadow: 0 5px 10px 0 rgba(91, 105, 130, 0.35);
+        }
+
+        &:before, &:after {
+            content: '';
+            background-color: $color-txt-dark;
+            border-radius: 999px;
+            position: absolute;
+            height: 2px;
+            width: 10px;
+            left: 50%;
+            top: 50%;
+        }
+
+        &:before {
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+
+        &:after {
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &__remove {
+
+        &:before {
+            display: none;
+        }
+    }
+
+    &__input {
+        @extend %heading-tooltip;
+        background-color: $color-bg-modal;
+        border: 1px solid $color-border;
+        border-radius: 4px;
+        position: relative;
+        text-align: center;
+        margin-right: 10px;
+        margin-left: 10px;
+        height: 30px;
+        width: 50px;
+
+        @media #{$xs} {
+            font-size: 13px;
+        }
+
+        @media #{$md} {
+            height: 40px;
+        }
+
+        &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+}

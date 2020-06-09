@@ -1,0 +1,127 @@
+%heading-1 {
+    font-family: $font-alt;
+    font-weight: bold;
+    font-size: 20px;
+
+    @media #{$sm} {
+        font-size: 36px;
+    }
+}
+
+%heading-2 {
+    font-family: $font-alt;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+%heading-3 {
+    font-family: $font-alt;
+    font-weight: bold;
+    font-size: 16px;
+
+    @media #{$sm} {
+        font-size: 20px;
+    }
+}
+
+%field-label {
+    font-family: $font-main;
+    font-weight: 600;
+    font-size: 16px;
+
+    @media #{$sm} {
+        font-size: 18px;
+    }
+}
+
+%button-text {
+    font-family: $font-alt;
+    font-weight: bold;
+    font-size: 11px;
+
+    @media #{$sm} {
+        font-size: 16px;
+    }
+}
+
+%heading-tooltip {
+    font-family: $font-main;
+    font-weight: 600;
+    font-size: 13px;
+
+    @media #{$sm} {
+        font-size: 16px;
+    }
+}
+
+%input-text {
+    font-family: $font-main;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+%input-placeholder {
+    font-family: $font-main;
+    font-weight: 600;
+    font-size: 14px;
+
+    @media #{$sm} {
+        font-size: 16px;
+    }
+}
+
+%footer-link {
+    font-family: $font-main;
+    color: $color-link-alt;
+    font-size: 13px;
+
+    @media #{$sm} {
+        font-size: 16px;
+    }
+}
+
+%table-label {
+  font-family: $font-main;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+%price-text {
+    font-family: $font-main;
+    line-height: 1.21;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+%header-desc {
+    font-family: $font-main;
+    color: $color-bg-modal;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+%global-link {
+    @include transition(all, 0.2s);
+    font-family: $font-main;
+    color: $color-link;
+    font-weight: 600;
+    font-size: 14px;
+
+    &:hover {
+        color: darken($color-link, 15%);
+    }
+}
+
+%footer-desc {
+    font-family: $font-main;
+    font-size: 13px;
+
+    @media #{$sm} {
+        font-size: 14px;
+    }
+}
+
+%global-desc {
+    font-family: $font-main;
+    font-size: 14px;
+}

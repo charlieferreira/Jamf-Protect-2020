@@ -1,0 +1,161 @@
+.m-table {
+    width: 100%;
+
+    &__row {
+        @include flex(flex-start, stretch, wrap);
+        margin-bottom: 15px;
+        width: 100%;
+
+        @media #{$md} {
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-wrap: nowrap;
+        }
+
+        &:last-of-type {
+
+            @media (max-width: $max-sm) {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__column {
+        @include flex(flex-start, center, wrap);
+        margin-bottom: 15px;
+        margin-right: 10px;
+        width: 100%;
+
+        @media #{$md} {
+            margin-right: 35px;
+            margin-bottom: 0;
+        }
+
+        &:nth-of-type(1) {
+            width: auto;
+
+            @media #{$md} {
+                margin-right: 20px;
+                min-width: 110px;
+                width: 110px;
+            }
+        }
+
+        &:nth-of-type(2) {
+            width: auto;
+
+            @media #{$md} {
+                width: 125px;
+            }
+        }
+
+        &:nth-of-type(3) {
+            width: calc(100% - 130px);
+
+            @media #{$md} {
+                width: 137px;
+            }
+        }
+
+        &:last-of-type {
+            margin-right: 0;
+            width: 120px;
+
+            @media #{$md} {
+                min-width: 195px;
+                width: 195px;
+            }
+        }
+
+        .e-tooltip__icon {
+            margin-left: 0;
+        }
+
+        &--summary {
+            width: 100% !important;
+            margin-top: 10px;
+
+            @media #{$md} {
+                width: 195px !important;
+                margin-left: auto;
+                margin-top: 0;
+            }
+        }
+    }
+
+    &__name {
+        @extend %field-label;
+    }
+
+    &__label {
+        @extend %table-label;
+        color: $color-bg-alt;
+        white-space: nowrap;
+
+        @media #{$xs} {
+            font-size: 13px;
+        }
+
+        strong {
+            color: $color-primary;
+        }
+
+        &--summary {
+            margin-bottom: 15px;
+            width: 100%;
+
+            @media #{$md} {
+                margin-bottom: 20px;
+            }
+
+            strong {
+                vertical-align: baseline;
+                display: inline-block;
+                text-align: center;
+                font-weight: 600;
+                margin-left: 5px;
+                font-size: 16px;
+
+                @media #{$sm} {
+                    font-size: 19px;
+                }
+
+                @media #{$md} {
+                    vertical-align: middle;
+                    font-size: 24px;
+                    margin-left: 0;
+                    width: 76px;
+                }
+            }
+        }
+    }
+
+    &__minimum {
+        @extend %global-desc;
+        color: $color-bg-alt;
+        margin-bottom: 10px;
+
+        @media (max-width: $max-sm) {
+            font-size: 13px;
+        }
+    }
+
+    &__counter {
+        display: inline-flex;
+        align-items: center;
+        margin-left: auto;
+
+        @media #{$md} {
+            margin-left: 0;
+        }
+
+        .m-table__label {
+            margin-right: 20px;
+            display: none;
+
+            @media #{$md} {
+                display: inline-block;
+            }
+        }
+    }
+}

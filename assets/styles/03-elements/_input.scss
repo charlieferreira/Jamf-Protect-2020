@@ -1,0 +1,14 @@
+.e-input {
+    @include transition;
+    @extend %input-placeholder;
+    border: 1px solid $color-border;
+    border-radius: 4px;
+    color: $color-txt;
+    padding: 0 15px;
+    height: 40px;
+    width: 100%;
+
+    &:focus {
+        box-shadow: 0 10px 30px 0 rgba(169, 177, 188, 0.2);
+    }
+}

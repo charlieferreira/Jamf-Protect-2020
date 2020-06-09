@@ -1,0 +1,46 @@
+.p-step {
+
+    .m-cart-button {
+        margin-bottom: 20px;
+
+        @media #{$sm} {
+            margin-bottom: 40px;
+        }
+
+        @media #{$xl} {
+            display: none;
+        }
+    }
+
+    .e-field__label-text {
+
+        @media (max-width: $max-sm) {
+            font-size: 16px;
+        }
+
+        @media #{$xs} {
+            font-size: 13px;
+        }
+    }
+
+    .m-page__actions {
+
+        @media #{$sm} {
+            margin-bottom: 25px;
+        }
+
+        .e-button {
+
+            @media #{$xs} {
+                width: 100%;
+            }
+        }
+    }
+
+    &--1 {
+
+        .m-page__container {
+            padding-top: 15px;
+        }
+    }
+}

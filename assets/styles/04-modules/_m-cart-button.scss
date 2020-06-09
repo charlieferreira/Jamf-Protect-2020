@@ -1,0 +1,44 @@
+.m-cart-button {
+    @include transition(all, 0.3s);
+    @include flex(space-between, center, wrap);
+    box-shadow: 0 10px 30px 0 rgba(169, 177, 188, 0.2);
+    background-color: $color-bg-modal;
+    display: inline-flex;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 20px;
+    width: 290px;
+
+    &:hover {
+        box-shadow: 0 10px 30px 0 rgba(169, 177, 188, 0.35);
+    }
+
+    &__label {
+        @include flex(flex-start, center, wrap);
+        display: inline-flex;
+        font-size: 0;
+    }
+
+    &__icon {
+        margin-right: 10px;
+        display: block;
+        height: 20px;
+        width: 15px;
+
+        img, svg {
+            object-fit: contain;
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    &__text {
+        @extend %heading-tooltip;
+        color: $color-txt-dark;
+    }
+
+    &__price {
+        @extend %table-label;
+        color: $color-primary;
+    }
+}

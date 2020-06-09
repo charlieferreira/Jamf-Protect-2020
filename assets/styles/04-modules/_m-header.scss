@@ -1,0 +1,63 @@
+.header {
+    background: $color-bg-alt;
+    position: relative;
+    z-index: 100;
+    width: 100%;
+
+    &__bar {
+        color: $color-bg-modal;
+        background: #2f343a;
+        text-align: center;
+        font-weight: 600;
+        font-size: 11px;
+        padding: 8px 0;
+
+        @media #{$lg} {
+            display: none;
+        }
+    }
+
+    &__container {
+        @include flex(space-between, center, nowrap);
+        color: $color-bg-modal;
+        height: 60px;
+        width: 100%;
+
+        @media #{$sm} {
+            height: 70px;
+        }
+    }
+
+    &__info {
+        @include flex(flex-start, center, wrap);
+        display: inline-flex;
+    }
+
+    &__text {
+        @extend %header-desc;
+        margin-left: 20px;
+        display: none;
+
+        @media #{$lg} {
+            margin-top: 12px;
+            display: block;
+        }
+    }
+
+    &__logo {
+        display: block;
+        height: 40px;
+        width: 120px;
+
+        @media #{$sm} {
+            height: 50px;
+            width: 175px;
+        }
+
+        img {
+            object-fit: contain;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}

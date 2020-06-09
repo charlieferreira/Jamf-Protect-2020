@@ -1,0 +1,159 @@
+.footer {
+    background-color: $color-bg-alt;
+    padding: 30px 0 20px 0;
+
+    @media #{$sm} {
+        padding-bottom: 30px;
+    }
+
+    &__row {
+        @media #{$sm} {
+            align-items: stretch;
+        }
+    }
+
+    &__logo {
+        width: 60px;
+        margin-bottom: 15px;
+        
+        @media #{$sm} {
+            width: 65px;
+        }
+        @media #{$md} {
+            width: 70px;
+        }
+        @media #{$lg} {
+            width: 85px;
+        }
+        
+        img, svg {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__offset {
+        @include flex(flex-start, flex-start, nowrap);
+        flex-direction: column;
+        position: relative;
+        height: 100%;
+    }
+
+    &__title {
+        @extend %heading-3;
+        font-family: $font-alt;
+        color: $color-bg-modal;
+        margin-bottom: 15px;
+        
+        @media #{$sm} {
+            margin-bottom: 18px;
+            min-height: 20px;
+        }
+        @media #{$md} {
+            margin-bottom: 22px;
+        }
+    }
+
+    &__menu {
+        margin-bottom: 25px;
+        font-size: 0;
+
+        @media #{$md} {
+            margin-bottom: 35px;
+        }
+        @media #{$lg} {
+            margin-bottom: 50px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            
+            @media #{$sm} {
+                margin-bottom: 12px;
+            }
+            @media #{$md} {
+                margin-bottom: 18px;
+            }
+
+            a {
+                @include transition(all, 0.2s);
+                @extend %footer-link;
+
+                &:hover {
+                    color: darken($color-link-alt, 15%);
+                }
+            }
+        }
+    }
+
+    &__copyrights, &__desc {
+        @extend %footer-desc;
+        color: $color-bg-modal;
+        line-height: 1.4;
+    }
+
+    &__desc {
+        margin-top: 20px;
+    }
+
+    &__copyrights {
+        margin-top: 10px;
+
+        @media #{$sm} {
+            margin-top: 30px;
+        }
+        @media #{$lg} {
+            margin-top: auto;
+        }
+
+        &--desktop {
+            display: none;
+
+            @media #{$lg} {
+                display: block;
+            }
+        }
+
+        &--mobile {
+            display: block;
+
+            @media #{$lg} {
+                display: none;
+            }
+        }
+    }
+
+    &__banners {
+        @include flex(flex-start, stretch, wrap);
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    &__banner {
+        margin-bottom: 10px;
+        border-radius: 12px;
+        margin-right: 10px;
+        overflow: hidden;
+        height: 47px;
+        width: auto;
+        font-size: 0;
+
+        @media #{$sm} {
+            margin-right: 20px;
+            height: 50px;
+        }
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+
+        img, svg {
+            height: 47px;
+            width: auto;
+
+            @media #{$sm} {
+                height: 50px;
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+/*
+ * Z-index
+ *
+ * .usage {
+ *     z-index: z("modal");
+ * }
+ */
+
+$z-index: (
+  modal: 100,
+  mask: 90,
+  navFixed: 80,
+  tooltip: 70,
+  popover: 60,
+  dropdown: 50,
+  nav: 50,
+  contentTop: 40,
+  content: 30,
+  contentBottom: 20
+);
+
+@function z($key) {
+  @return map-get($z-index, $key)
+}

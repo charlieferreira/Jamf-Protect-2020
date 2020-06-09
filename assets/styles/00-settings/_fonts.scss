@@ -1,0 +1,30 @@
+/* ==========================================================================
+   Fonts
+   ========================================================================== */
+
+/* Import
+   ========================================================================== */
+
+    @font-face {
+        font-family: 'Proxima Nova';
+        font-weight: normal;
+        src: url('./assets/fonts/proxima-nova-regular.otf') format('opentype');
+    }
+
+    @font-face {
+        font-family: 'Proxima Nova';
+        font-weight: 600;
+        src: url('./assets/fonts/proxima-nova-semibold.otf') format('opentype');
+    }
+
+    @font-face {
+        font-family: 'Museo Slab';
+        font-weight: bold;
+        src: url('./assets/fonts/museo-slab-bold.ttf') format('truetype');
+    }
+
+/* Variables
+   ========================================================================== */
+
+    $font-main: 'Proxima Nova', 'Helvetica', 'Arial', sans-serif;
+    $font-alt: 'Museo Slab', serif;

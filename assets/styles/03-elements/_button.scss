@@ -1,0 +1,152 @@
+.e-button {
+    @include transition;
+    @extend %button-text;
+    border: 2px solid $color-primary;
+    background-color: $color-primary;
+    display: inline-block;
+    border-radius: 999px;
+    text-align: center;
+    line-height: 36px;
+    color: $color-txt;
+    user-select: none;
+    padding: 0 20px;
+
+    @media #{$sm} {
+        line-height: 50px;
+        padding: 0 30px;
+    }
+
+    &:hover {
+        background-color: lighten($color-primary, 10%);
+        border-color: lighten($color-primary, 10%);
+        color: $color-txt;
+    }
+
+    &--mobile {
+
+        @media #{$xl} {
+            display: none !important;
+        }
+    }
+
+    &--desktop {
+        display: none !important;
+
+        @media #{$xl} {
+            display: inline-block !important;
+        }
+    }
+
+    &--disabled {
+        background-color: $color-border;
+        border-color: $color-border;
+        color: $color-placeholder;
+        pointer-events: none;
+        cursor: not-allowed;
+
+        &:hover {
+            background-color: $color-border;
+            border-color: $color-border;
+            color: $color-placeholder;
+
+            .e-button__icon {
+
+                @media #{$sm} {
+                    right: 30px !important;
+                }
+            }
+        }
+    }
+
+    &--complete {
+        display: inline-block;
+
+        @media #{$xl} {
+            display: none;
+        }
+    }
+
+    &--outline {
+        border: 2px solid $color-bg-modal;
+        background-color: transparent;
+        color: $color-bg-modal;
+
+        &:hover {
+            background-color: $color-bg-modal;
+            border-color: $color-bg-modal;
+        }
+
+        &.e-button--dark {
+            border: 2px solid $color-txt;
+            color: $color-txt;
+
+            &:hover {
+                background-color: $color-txt;
+                color: $color-bg-modal;
+            }
+        }
+    }
+
+    &--icon {
+        position: relative;
+
+        @media #{$sm} {
+            padding-right: 80px;
+        }
+
+        &.e-button--disabled {
+
+            svg {
+
+                g {
+                    stroke: $color-placeholder !important;
+                }
+            }
+        }
+
+        &:hover {
+
+            .e-button__icon {
+
+                @media #{$sm} {
+                    right: 25px;
+                }
+            }
+        }
+
+        .e-button__icon {
+            @include transition;
+            vertical-align: baseline;
+            display: inline-block;
+            position: relative;
+            margin-left: 10px;
+            height: 9px;
+            width: 18px;
+
+            @media #{$sm} {
+                transform: translateY(-50%);
+                position: absolute;
+                margin-left: 0;
+                right: 30px;
+                top: 50%;
+            }
+
+            img, svg {
+                object-fit: contain;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                left: 0;
+                top: 0;
+            }
+
+            svg {
+
+                g {
+                    @include transition;
+                    stroke: $color-txt;
+                }
+            }
+        }
+    }
+}

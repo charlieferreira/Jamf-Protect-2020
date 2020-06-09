@@ -1,0 +1,14 @@
+/*
+ * Flex
+ *
+ * .usage {
+ *    @include flex([property],[duration],[easing]);
+ * }
+ */
+
+@mixin flex($justify, $align, $wrap) {
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+    display: flex;
+}

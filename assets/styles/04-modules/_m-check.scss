@@ -1,0 +1,157 @@
+.m-check {
+    @include flex(flex-start, stretch, wrap);
+    margin-bottom: 20px;
+    width: 100%;
+
+    &__label {
+        width: calc(100% - 40px);
+        line-height: 1.4;
+        font-size: 0;
+
+        @media #{$xs} {
+            margin-top: 2px;
+        }
+
+        @media #{$sm} {
+            padding-right: 20px;
+            width: 260px;
+        }
+
+        @media #{$md} {
+            width: 355px;
+        }
+
+        label {
+            @extend %table-label;
+            vertical-align: middle;
+            color: $color-bg-alt;
+            display: inline;
+
+            @media #{$xs} {
+                font-size: 14px;
+            }
+
+            @media #{$sm} {
+                margin-right: 10px;
+            }
+
+            @media #{$lg} {
+                cursor: pointer;
+            }
+
+            span {
+                @extend %global-desc;
+                display: inline-block;
+                color: $color-bg-alt;
+                font-weight: 400;
+                line-height: 1.4;
+                width: 100%;
+
+            }
+        }
+
+        a {
+            @extend %global-link;
+            display: block;
+
+            @media #{$xs} {
+                font-size: 13px;
+            }
+        }
+
+        .e-tooltip {
+            vertical-align: middle;
+            display: inline-block;
+
+            &__icon {
+                margin-right: 0;
+
+                @media #{$sm} {
+                    margin-left: 0;
+                }
+            }
+        }
+
+        &--full {
+            width: calc(100% - 40px);
+        }
+    }
+
+    &__value {
+        @extend %table-label;
+        color: $color-txt-dark;
+        padding-left: 40px;
+        margin-top: 0.65em;
+        line-height: 1.4;
+        width: 100%;
+
+        @media #{$xs} {
+            font-size: 12px;
+        }
+
+        @media #{$sm} {
+            width: calc(100% - 40px - 260px);
+            text-align: right;
+            padding-left: 0;
+            margin-top: 0;
+        }
+
+        @media #{$md} {
+            width: calc(100% - 40px - 355px);
+            text-align: left;
+        }
+
+        strong {
+            color: $color-primary;
+        }
+    }
+
+    &__price {
+        @extend %table-label;
+        color: $color-primary;
+        display: inline-block;
+
+        @media #{$xs} {
+            font-size: 12px;
+        }
+    }
+
+    .e-radio {
+        margin-right: 20px;
+        align-self: center;
+    }
+
+    &--wider {
+
+        .m-check__label {
+
+            @media #{$md} {
+                width: 385px;
+            }
+        }
+
+        .m-check__value {
+
+            @media #{$md} {
+                width: calc(100% - 40px - 385px);
+            }
+        }
+    }
+
+    &--price-only {
+
+        .m-check__label {
+
+            @media #{$sm} {
+                width: 360px;
+            }
+        }
+
+        .m-check__value {
+
+            @media #{$sm} {
+                width: calc(100% - 40px - 360px);
+            }
+        }
+    }
+}

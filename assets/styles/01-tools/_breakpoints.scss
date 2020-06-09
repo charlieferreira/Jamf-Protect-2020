@@ -1,0 +1,9 @@
+$xs: "only screen and (max-width: #{$max-xs})";
+$sm: "only screen and (min-width: #{$min-sm})";
+$md: "only screen and (min-width: #{$min-md})";
+$lg: "only screen and (min-width: #{$min-lg})";
+// $xlg: "only screen and (min-width: #{$min-xlg})";
+$xl: "only screen and (min-width: #{$min-xl})";
+
+@mixin bp-up {}
+@mixin bp-down {}
